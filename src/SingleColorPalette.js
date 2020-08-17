@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './PaletteFooter';
+import styles from './styles/PaletteStyles'
+import { withStyles } from '@material-ui/core/styles';
 import ColorBox from './ColorBox';
 
 class SingleColorPalette extends Component {
@@ -37,18 +39,19 @@ class SingleColorPalette extends Component {
 
     render() {
         const { paletteName, emoji, id } = this.props.palette;
+        const { classes } = this.props;
         const { format, open } = this.state;
         const colorBoxes = this._shades.map(color => (
-            <ColorBox key={color.name} name={color.name} background={color[format]} showLink={false} />
+            <ColorBox key={color.name} name={color.name} background={color[format]} showingFullPalette={false} />
         ))
         return (
-            <div className="SingleColorPalette Palette">
+            <div className={classes.Palette}>
                 <Navbar handleChange={this.changeFormat} showingAllColors={false} />
-                <div className="Palette-colors">
+                <div className={classes.colors}>
                     {colorBoxes}
-                        <Link to={`/palette/${id}`} className="go-back ColorBox">
-                            <div className="back-button">GO BACK</div>
-                        </Link>
+                    <Link to={`/palette/${id}`} className={classes.goBack}>
+                        <div>GO BACK</div>
+                    </Link>
                 </div>
                 <Footer paletteName={paletteName} emoji={emoji} format={format} open={open} handleClose={this.handleClose} />
             </div>
@@ -56,4 +59,4 @@ class SingleColorPalette extends Component {
     }
 }
 
-export default SingleColorPalette;
+export default withStyles(styles)(SingleColorPalette);

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import Footer from './PaletteFooter';
-import './Palette.css';
+import styles from './styles/PaletteStyles'
+import { withStyles } from '@material-ui/core/styles';
 
 class Palette extends Component {
     constructor(props) {
@@ -23,21 +24,22 @@ class Palette extends Component {
 
     handleClose = (event, reason) => {
         if (reason === 'clickaway') {
-          return;
+            return;
         }
-        this.setState({open: false});
+        this.setState({ open: false });
     }
 
     render() {
         const { colors, paletteName, emoji, id } = this.props.palette;
+        const { classes } = this.props;
         const { level, format, open } = this.state;
         const colorBoxes = colors[level].map(color => (
-            <ColorBox key={color.id} background={color[format]} name={color.name} id={color.id} paletteId={id} showLink={true} />
+            <ColorBox key={color.id} background={color[format]} name={color.name} id={color.id} paletteId={id} showingFullPalette={true} />
         ));
         return (
-            <div className="Palette">
+            <div className={classes.Palette}>
                 <Navbar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat} showingAllColors={true} />
-                <div className="Palette-colors">
+                <div className={classes.colors}>
                     {colorBoxes}
                 </div>
                 <Footer paletteName={paletteName} emoji={emoji} format={format} open={open} handleClose={this.handleClose} />
@@ -46,4 +48,4 @@ class Palette extends Component {
     }
 }
 
-export default Palette;
+export default withStyles(styles)(Palette);

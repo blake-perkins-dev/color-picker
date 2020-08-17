@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import './PaletteFooter.css';
+import styles from './styles/PaletteFooterStyles';
+import { withStyles } from '@material-ui/core/styles';
 
 class PaletteFooter extends Component {
     render() {
-        const { paletteName, emoji, format, open, handleClose } = this.props;
+        const { paletteName, emoji, format, open, handleClose, classes } = this.props;
         return (
             <div>
-                <footer className="PaletteFooter">
+                <footer className={classes.PaletteFooter}>
                     {paletteName}
-                    <span className="emoji">{emoji}</span>
+                    <span className={classes.emoji}>{emoji}</span>
                 </footer>
                 <div>
                     <Snackbar
@@ -22,7 +23,7 @@ class PaletteFooter extends Component {
                         open={open}
                         autoHideDuration={3000}
                         message={<span id="message-id">Format Changed to {format.toUpperCase()}!</span>}
-                        ContentProps={{"aria-describedby": "message-id"}}
+                        ContentProps={{ "aria-describedby": "message-id" }}
                         onClose={handleClose}
                         action={
                             <React.Fragment>
@@ -38,4 +39,4 @@ class PaletteFooter extends Component {
     }
 }
 
-export default PaletteFooter;
+export default withStyles(styles)(PaletteFooter);
