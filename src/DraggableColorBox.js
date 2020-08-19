@@ -11,7 +11,7 @@ const styles = {
         display: "inline-block",
         position: "relative",
         cursor: "pointer",
-        marginBottom: "-.8%",
+        marginBottom: "-4.5px",
         "&:hover svg": {
             color: "white",
             transform: "scale(1.5)"
@@ -20,7 +20,7 @@ const styles = {
     boxContent: {
         position: "absolute",
         padding: "3%",
-        width: "94%",
+        width: "100%",
         left: "0",
         bottom: "0",
         color: "black",
