@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Slider from 'rc-slider';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-
 import 'rc-slider/assets/index.css';
 import styles from './styles/NavbarStyles';
 

@@ -123,7 +123,7 @@ export default [
         { name: "HintOfIcePack", color: "#c7ecee" },
         { name: "MiddleBlue", color: "#7ed6df" },
         { name: "Heliotrope", color: "#e056fd" },
-        { name: "ExodusFruit", color: "#686de0" },
+        { name: "Exodus", color: "#686de0" },
         { name: "DeepKoamaru", color: "#30336b" },
         { name: "SoaringEagle", color: "#95afc0" },
         { name: "GreenlandGreen", color: "#22a6b3" },

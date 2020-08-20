@@ -47,7 +47,7 @@ class ColorPickerForm extends Component {
         return (
             <div className={classes.container}>
                 <ChromePicker color={currentColor} onChange={this.handleColorChange} className={classes.picker} />
-                <ValidatorForm onSubmit={this.handleSubmit}>
+                <ValidatorForm onSubmit={this.handleSubmit} instantValidate={false}>
                     <TextValidator
                         value={newColorName}
                         name="newColorName"
