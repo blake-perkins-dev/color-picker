@@ -9,7 +9,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardTab from '@material-ui/icons/KeyboardTab';
-import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import styles from './styles/PaletteFormNavStyles';
 
