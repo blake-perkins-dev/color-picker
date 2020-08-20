@@ -16,7 +16,11 @@ export default {
         height: "150px",
         width: "100%",
         borderRadius: "5px",
-        overflow: "hidden"
+        overflow: "hidden",
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "flex-start",
+        alignContent: "flex-start"
     },
     title: {
         display: "flex",
@@ -36,9 +40,9 @@ export default {
         height: "25%",
         width: "20%",
         display: "inline-block",
-        margin: "0 auto",
+        // margin: "0 auto",
         position: "relative",
-        marginBottom: "-3.5px"
+        // marginBottom: "-3.5px"
     },
     delete: {
 
